@@ -113,8 +113,8 @@ macro(spark_initialize_modules)
         # SparkTranslatorConfig.cmake
         # SparkInstallMacrosConfig.cmake
         # SparkBuildGraphviz.cmake
-        # SparkDesktopMacros.cmake
-        # SparkDebPackageConfig.cmake
+        SparkDesktopMacros.cmake
+        SparkDebPackageConfig.cmake
         # SparkAppimageConfig.cmake
         # SparkParasiticBuild.cmake
     )

@@ -23,31 +23,36 @@ target_link_qt_quick(${PROJECT_NAME})
 
 # include(cmake/SparkDesktopMacros.cmake)
 # # 内容默认应用名称: Name= 应与项目名称相同
-# spark_desktop_macros(
-#     # 应用名称: Name=
-#     ${PROJECT_NAME}
-#     # 应用名称: Name[zh_CN]=
-#     "测试程序"
-#     # 应用说明: Comment=
-#     ""
-#     # 应用类型: Type=
-#     "Application"
-#     # 执行程序: Exec=
-#     "/usr/bin/${PROJECT_NAME}"
-#     # 图标路径: Icon=
-#     "x"
-#     # 应用分类: Category=
-#     "Utility"
-# )
+spark_desktop_macros(
+    # 应用名称: Name=
+    ${PROJECT_NAME}
+    # 应用名称: Name[zh_CN]=
+    "四连棋"
+    # 应用说明: Comment=
+    ""
+    # 应用类型: Type=
+    "Application"
+    # 执行程序: Exec=
+    "/usr/bin/${PROJECT_NAME}"
+    # 图标路径: Icon=
+    "connectFourQML"
+    # 应用分类: Category=
+    "Utility"
+)
 
 # # install, 
-# install(TARGETS ${PROJECT_NAME}
-#     DESTINATION /usr/bin)
+install(TARGETS ${PROJECT_NAME}
+    DESTINATION /usr/bin)
 
-# install(FILES ${CMAKE_BINARY_DIR}/${PROJECT_NAME}.desktop
-#     DESTINATION /usr/share/applications)
+install(FILES ${SPARK_DESKTOP_FILE}
+    DESTINATION /usr/share/applications)
+
+install(FILES icon.png
+    DESTINATION /usr/share/icons/hicolor/512x512/apps
+    RENAME connectFourQML.png)
+
 
 # include(cmake/SparkBuildGraphviz.cmake)
 
 # find_package(DebPackage PATHS ${CMAKE_SOURCE_DIR})
-# add_package_descript(cmake/package-deb.descript)
+add_package_descript(cmake/package-deb.descript)
