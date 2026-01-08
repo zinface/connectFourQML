@@ -55,4 +55,5 @@ install(FILES icon.png
 # include(cmake/SparkBuildGraphviz.cmake)
 
 # find_package(DebPackage PATHS ${CMAKE_SOURCE_DIR})
-add_package_descript(cmake/package-deb.descript)
+set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
+add_package_descript(cmake/spark-deb-package.descript)
